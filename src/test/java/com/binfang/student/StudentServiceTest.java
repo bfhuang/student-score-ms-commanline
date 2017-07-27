@@ -1,12 +1,11 @@
 package com.binfang.student;
 
-import com.google.common.collect.ImmutableMap;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.Map;
 
+import static com.binfang.common.StudentBuilder.buildStudent;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -44,20 +43,6 @@ public class StudentServiceTest {
         List<Student> students = service.getStudents(asList("1", "2"));
 
         assertThat(students, is(asList(student1, student2)));
-    }
-
-    private Student buildStudent(String name, String id) {
-        Student student = new Student();
-        Map<String, Double> scores = ImmutableMap.of(
-                "数学", (double) 90,
-                "英语", (double) 92,
-                "编程", 92.3,
-                "语文", (double) 91);
-
-        student.setName(name);
-        student.setId(id);
-        student.setScores(scores);
-        return student;
     }
 
 }
