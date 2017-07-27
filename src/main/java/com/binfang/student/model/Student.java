@@ -1,17 +1,21 @@
 package com.binfang.student.model;
 
+import com.binfang.printstudent.DoubleFormater;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by bfhuang on 7/27/17.
  */
 public class Student {
-    private String name;
+    private String subject;
     private String id;
-    private List<Score> scores;
+    private List<Score> scores = new ArrayList<>();
+    private int classNumber;
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public void setId(String id) {
@@ -26,11 +30,36 @@ public class Student {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getSubject() {
+        return subject;
     }
 
     public List<Score> getScores() {
         return scores;
+    }
+
+    public void setClassNumber(int classNumber) {
+        this.classNumber = classNumber;
+    }
+
+    public int getClassNumber() {
+        return classNumber;
+    }
+
+    public double getTotalScore() {
+        return scores.stream().mapToDouble(score -> score.getScore()).sum();
+    }
+
+    public double getScoreFor(String subject) {
+        for (Score score : scores) {
+            if (subject.equals(score.getName()))
+                return score.getScore();
+        }
+
+        return 0;
+    }
+
+    public double getAverage() {
+        return DoubleFormater.formatDouble(scores.stream().mapToDouble(item -> item.getScore()).average().getAsDouble());
     }
 }

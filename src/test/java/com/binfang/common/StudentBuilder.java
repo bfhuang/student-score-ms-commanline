@@ -12,18 +12,27 @@ import java.util.List;
 public class StudentBuilder {
 
     public static Student buildStudent(String name, String id) {
+        return buildStudent(name, id, 3, 90.5);
+    }
+
+    public static Student buildStudent(String name, String id, int classNumber) {
+        return buildStudent(name, id, classNumber, 90.5);
+    }
+
+    public static Student buildStudent(String name, String id, int classNumber, double score) {
         Student student = new Student();
         List<Score> scores = Arrays.asList(
-                new Score("数学", 80.5),
-                new Score("英语", (double) 92),
-                new Score("编程", 93.5),
-                new Score("语文", 92.5)
+                new Score("数学", score),
+                new Score("英语", score),
+                new Score("编程", score),
+                new Score("语文", score)
         );
 
-
-        student.setName(name);
+        student.setClassNumber(classNumber);
+        student.setSubject(name);
         student.setId(id);
         student.setScores(scores);
         return student;
     }
+
 }

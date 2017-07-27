@@ -19,4 +19,8 @@ public class StudentService {
     public List<Student> getStudents(List<String> ids) {
         return studentRep.findByIds(ids);
     }
+
+    public List<Student> getStudents(Integer classNumber) {
+        return studentRep.findByClassNumber(classNumber);
+    }
 }

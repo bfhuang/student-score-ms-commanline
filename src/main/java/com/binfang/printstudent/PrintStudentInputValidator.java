@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
  */
 public class PrintStudentInputValidator {
 
-//    |(\\d+)
     private static final String PRINT_STUDENTS_INPUT_REGEX = "^((\\d+,\\s)+\\d+)|(\\d+)$";
 
     public boolean validate(String input) {

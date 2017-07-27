@@ -18,7 +18,7 @@ public class AddStudentInputValidatorTest {
 
     @Test
     public void should_return_true_if_the_add_student_input_format_is_correct() {
-        boolean result = validator.validate("name1, 1, 数学:21, 语文:12.5, 英语:79, 编程:93");
+        boolean result = validator.validate("name1, 1, 3, 数学:21, 语文:12.5, 英语:79, 编程:93");
 
         assertTrue(result);
     }
@@ -29,4 +29,13 @@ public class AddStudentInputValidatorTest {
 
         assertFalse(result);
     }
+
+
+    @Test
+    public void should_return_false_if_the_class_number_start_with_0__format_is_correct() {
+        boolean result = validator.validate("name1, 1, 02, 数学:21, 语文:12.5, 英语:79, 编程:93");
+
+        assertFalse(result);
+    }
+
 }

@@ -15,8 +15,9 @@ public class StudentTranslator {
     public Student buildStudent(String input) {
         String[] split = input.split(",\\s");
         Student student = new Student();
-        student.setName(split[0]);
+        student.setSubject(split[0]);
         student.setId(split[1]);
+        student.setClassNumber(Integer.parseInt(split[2]));
         List<Score> scores = Stream.of(split).filter(item -> item.contains(":")).map(
                 item -> {
                     String[] scoreSplit = item.split(":");

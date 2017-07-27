@@ -1,23 +1,17 @@
 package com.binfang.menu;
 
-import com.binfang.common.PromptConstants;
 import com.binfang.io.IOInterface;
 import com.binfang.io.IORequest;
-import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.util.regex.Pattern;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 /**
  * Created by bfhuang on 7/27/17.
@@ -31,7 +25,6 @@ public class MainMenuTest {
     MainMenu menu;
 
 
-
     @Test
     public void should_display_menu_and_return_correct_menu_choice() {
         when(io.handleOutputAndInput(any(IORequest.class))).thenReturn("1");
@@ -39,7 +32,7 @@ public class MainMenuTest {
         String choice = menu.execute();
 
         assertThat(choice, is("1"));
-        verify(io,times(1)).handleOutputAndInput(any(IORequest.class));
+        verify(io, times(1)).handleOutputAndInput(any(IORequest.class));
     }
 
     @Test
@@ -50,6 +43,6 @@ public class MainMenuTest {
         String choice = menu.execute();
 
         assertThat(choice, is("2"));
-        verify(io,times(2)).handleOutputAndInput(any(IORequest.class));
+        verify(io, times(2)).handleOutputAndInput(any(IORequest.class));
     }
 }

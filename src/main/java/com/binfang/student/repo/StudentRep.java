@@ -11,4 +11,6 @@ public interface StudentRep {
     void save(Student student);
 
     List<Student> findByIds(List<String> ids);
+
+    List<Student> findByClassNumber(Integer classNumber);
 }
