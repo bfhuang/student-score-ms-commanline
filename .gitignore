@@ -1,3 +1,4 @@
 student-score-ms-commandline.i*
 build
 .gradle
+out
