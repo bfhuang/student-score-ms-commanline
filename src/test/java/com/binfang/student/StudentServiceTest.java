@@ -1,7 +1,11 @@
 package com.binfang.student;
 
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
@@ -9,28 +13,27 @@ import static com.binfang.common.StudentBuilder.buildStudent;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.when;
 
-/**
- * Created by bfhuang on 7/27/17.
- */
+
+@RunWith(MockitoJUnitRunner.class)
 public class StudentServiceTest {
 
+    @Mock
+    StudentRep studentRep;
+
+    @InjectMocks
     private StudentService service;
-
-
-    @Before
-    public void setUp() throws Exception {
-        service = new StudentService();
-    }
 
     @Test
     public void should_add_student_successfully() {
-        service = new StudentService();
         Student student = buildStudent("binfang", "1");
 
         service.addStudent(student);
 
-        assertThat(service.getStudents(asList("1")), is(asList(student)));
+        Mockito.verify(studentRep,times(1)).save(any(Student.class));
     }
 
     @Test
@@ -39,10 +42,11 @@ public class StudentServiceTest {
         service.addStudent(student1);
         Student student2 = buildStudent("name2", "2");
         service.addStudent(student2);
+        when(studentRep.findByIds(asList("1","2"))).thenReturn(asList(student1, student2));
 
         List<Student> students = service.getStudents(asList("1", "2"));
 
         assertThat(students, is(asList(student1, student2)));
+        Mockito.verify(studentRep, times(1)).findByIds(asList("1", "2"));
     }
-
 }
