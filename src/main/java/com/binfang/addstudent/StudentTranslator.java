@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 public class StudentTranslator {
 
     public Student buildStudent(String input) {
-        String[] split = input.split(", ");
+        String[] split = input.split(",\\s");
         Student student = new Student();
         student.setName(split[0]);
         student.setId(split[1]);
