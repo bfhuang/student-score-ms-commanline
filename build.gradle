@@ -16,6 +16,8 @@ repositories {
     jcenter()
 }
 
+build.dependsOn jacocoTestReport
+
 dependencies {
     compile 'com.google.guava:guava:21.0'
 

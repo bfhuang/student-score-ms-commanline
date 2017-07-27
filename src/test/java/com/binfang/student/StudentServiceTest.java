@@ -1,7 +1,5 @@
-package com.binfang.module;
+package com.binfang.student;
 
-import com.binfang.model.Student;
-import com.bing.module.StudentService;
 import com.google.common.collect.ImmutableMap;
 import org.junit.Before;
 import org.junit.Test;

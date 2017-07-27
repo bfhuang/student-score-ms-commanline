@@ -1,6 +1,5 @@
-package com.bing.module;
+package com.binfang.student;
 
-import com.binfang.model.Student;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

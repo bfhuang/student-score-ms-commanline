@@ -1,4 +1,4 @@
-package com.binfang.model;
+package com.binfang.student;
 
 import java.util.Map;
 
