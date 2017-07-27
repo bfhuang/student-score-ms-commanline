@@ -2,7 +2,7 @@ package com.binfang.addstudent;
 
 import com.binfang.io.IOInterface;
 import com.binfang.io.IORequest;
-import com.binfang.student.Student;
+import com.binfang.student.model.Student;
 import com.binfang.student.StudentService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.binfang.student;
+package com.binfang.student.model;
 
 import java.util.List;
 

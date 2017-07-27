@@ -1,5 +1,7 @@
 package com.binfang.student;
 
+import com.binfang.student.model.Student;
+import com.binfang.student.repo.StudentRep;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

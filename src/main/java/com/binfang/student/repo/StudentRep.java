@@ -1,7 +1,8 @@
-package com.binfang.student;
+package com.binfang.student.repo;
+
+import com.binfang.student.model.Student;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by bfhuang on 7/27/17.

@@ -1,4 +1,6 @@
-package com.binfang.student;
+package com.binfang.student.repo;
+
+import com.binfang.student.model.Student;
 
 import java.util.HashMap;
 import java.util.List;

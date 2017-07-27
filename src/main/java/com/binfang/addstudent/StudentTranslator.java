@@ -1,7 +1,7 @@
 package com.binfang.addstudent;
 
-import com.binfang.student.Score;
-import com.binfang.student.Student;
+import com.binfang.student.model.Score;
+import com.binfang.student.model.Student;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,15 +1,14 @@
-package com.binfang.student;
+package com.binfang.student.repo;
 
-import com.binfang.common.StudentBuilder;
+import com.binfang.student.model.Student;
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static com.binfang.common.StudentBuilder.buildStudent;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by bfhuang on 7/27/17.

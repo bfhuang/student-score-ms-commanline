@@ -1,6 +1,6 @@
 package com.binfang.addstudent;
 
-import com.binfang.student.Student;
+import com.binfang.student.model.Student;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
