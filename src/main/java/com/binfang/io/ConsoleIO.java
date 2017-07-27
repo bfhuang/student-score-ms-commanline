@@ -5,7 +5,9 @@ import java.util.Scanner;
 /**
  * Created by bfhuang on 7/27/17.
  */
-public class IOModule {
+public class ConsoleIO implements IOInterface  {
+
+    @Override
     public String handleOutputAndInput(IORequest ioRequest) {
         System.out.print(ioRequest.getOutput());
 

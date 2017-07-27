@@ -7,7 +7,6 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Scanner;
 
 import static junit.framework.TestCase.assertNull;
 import static org.hamcrest.CoreMatchers.is;
@@ -23,11 +22,11 @@ public class IOModuleTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private ByteArrayInputStream inputContent = new ByteArrayInputStream("some input".getBytes());
-    private IOModule ioModule;
+    private ConsoleIO ioModule;
 
     @Before
     public void setUpStreams() {
-        ioModule = new IOModule();
+        ioModule = new ConsoleIO();
 
         System.setOut(new PrintStream(outContent));
         System.setErr(new PrintStream(errContent));
