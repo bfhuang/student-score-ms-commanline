@@ -1,6 +1,6 @@
-package com.binfang.student.repo;
+package com.binfang.service.repo;
 
-import com.binfang.student.model.Student;
+import com.binfang.service.model.Student;
 
 import java.util.List;
 

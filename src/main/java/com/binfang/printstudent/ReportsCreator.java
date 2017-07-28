@@ -1,7 +1,7 @@
 package com.binfang.printstudent;
 
-import com.binfang.student.StudentService;
-import com.binfang.student.model.Student;
+import com.binfang.service.StudentService;
+import com.binfang.service.model.Student;
 
 import java.util.ArrayList;
 import java.util.List;

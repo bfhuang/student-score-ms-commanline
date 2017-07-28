@@ -23,7 +23,8 @@ dependencies {
 
     testCompile 'junit:junit:4.12',
             // https://mvnrepository.com/artifact/org.mockito/mockito-core
-            'org.mockito:mockito-core:2.8.9'
+            'org.mockito:mockito-core:2.8.9',
+            'com.github.stefanbirkner:system-rules:1.16.0'
 }
 
 mainClassName = 'App'

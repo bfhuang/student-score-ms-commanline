@@ -17,7 +17,7 @@ public class ReportsOutputTranslator {
 
                     String students = report.getStudents().stream().map(student ->
                             String.format("%s|%s|%s|%s|%s|%s|%s",
-                                    student.getSubject(), student.getScoreFor(Subjects.MATH),
+                                    student.getName(), student.getScoreFor(Subjects.MATH),
                                     student.getScoreFor(Subjects.LANGUAGE), student.getScoreFor(Subjects.ENGLISH),
                                     student.getScoreFor(Subjects.PROGRAMMING), student.getAverage(),
                                     student.getTotalScore())).collect(Collectors.joining("\n"));
@@ -28,6 +28,6 @@ public class ReportsOutputTranslator {
                 }
         );
 
-        return buffer.substring(0, buffer.length() - 1).toString();
+        return buffer.toString();
     }
 }

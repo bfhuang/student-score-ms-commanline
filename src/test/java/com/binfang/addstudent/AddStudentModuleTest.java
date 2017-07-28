@@ -2,8 +2,8 @@ package com.binfang.addstudent;
 
 import com.binfang.io.IOInterface;
 import com.binfang.io.IORequest;
-import com.binfang.student.model.Student;
-import com.binfang.student.StudentService;
+import com.binfang.service.StudentService;
+import com.binfang.service.model.Student;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -49,6 +49,7 @@ public class AddStudentModuleTest {
         addStudentModule.execute();
 
         verify(studentService, times(1)).addStudent(student);
+        verify(io, times(2)).handleOutputAndInput(any(IORequest.class));
     }
 
     @Test
@@ -62,5 +63,6 @@ public class AddStudentModuleTest {
         addStudentModule.execute();
 
         verify(studentService, times(1)).addStudent(student);
+        verify(io, times(3)).handleOutputAndInput(any(IORequest.class));
     }
 }

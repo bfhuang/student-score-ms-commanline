@@ -1,5 +1,6 @@
 package com.binfang.printstudent;
 
+import com.binfang.common.ModuleInterface;
 import com.binfang.io.IOInterface;
 import com.binfang.io.IORequest;
 
@@ -13,7 +14,7 @@ import static com.binfang.common.PromptConstants.INPUT_IDS;
 /**
  * Created by bfhuang on 7/28/17.
  */
-public class ReportStudentModule {
+public class ReportStudentModule implements ModuleInterface {
 
     private final IOInterface io;
     private final ReportsCreator reportsCreator;
@@ -25,7 +26,7 @@ public class ReportStudentModule {
         this.outputTranslator = outputTranslator;
     }
 
-
+    @Override
     public void execute() {
         String input = io.handleOutputAndInput(new IORequest(INPUT_IDS, true));
 
@@ -33,7 +34,7 @@ public class ReportStudentModule {
             input = io.handleOutputAndInput(new IORequest(INPUT_CORRECT_STUDENT, true));
         }
 
-        List<Report> reports = reportsCreator.buildReports(Arrays.asList(input.split("\\s")));
+        List<Report> reports = reportsCreator.buildReports(Arrays.asList(input.split(",\\s")));
         String output = outputTranslator.translateReportsToString(reports);
 
         io.handleOutputAndInput(new IORequest(output, false));

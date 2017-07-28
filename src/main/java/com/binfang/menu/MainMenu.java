@@ -17,12 +17,13 @@ public class MainMenu {
         this.io = io;
     }
 
-    public String execute() {
+    public String
+    execute() {
         String response = io.handleOutputAndInput(new IORequest(MAIN_MENU, true));
 
         while (!Pattern.compile(MENU_CHOICE_REGEX).matcher(response).matches()) {
             response = io.handleOutputAndInput(new IORequest(
-                    String.format("%s, %s", INCORRECT_MENU_CHOICE, MAIN_MENU), true));
+                    String.format("%s %s", INCORRECT_MENU_CHOICE, MAIN_MENU), true));
         }
 
         return response;

@@ -1,4 +1,4 @@
-package com.binfang.student.model;
+package com.binfang.service.model;
 
 import com.binfang.common.StudentBuilder;
 import com.binfang.common.Subjects;

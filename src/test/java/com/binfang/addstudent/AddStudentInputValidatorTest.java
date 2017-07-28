@@ -18,8 +18,10 @@ public class AddStudentInputValidatorTest {
 
     @Test
     public void should_return_true_if_the_add_student_input_format_is_correct() {
-        boolean result = validator.validate("name1, 1, 3, 数学:21, 语文:12.5, 英语:79, 编程:93");
+        boolean result = validator.validate("name22, 22, 3, 数学:21, 语文:12.5, 英语:79, 编程:93");
+        assertTrue(result);
 
+        result = validator.validate("name2, 2, 3, 数学:21, 语文:12.5, 英语:79, 编程:93");
         assertTrue(result);
     }
 

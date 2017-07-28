@@ -1,6 +1,6 @@
-package com.binfang.student.repo;
+package com.binfang.service.repo;
 
-import com.binfang.student.model.Student;
+import com.binfang.service.model.Student;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -34,9 +34,16 @@ public class StudentInMemoryRepTest {
         rep.save(student2);
         rep.save(student3);
 
-        List<Student> students = rep.findByIds(asList("1", "3"));
+        List<Student> students = rep.findByIds(asList("1", "2"));
 
-        assertThat(students, is(asList(student1, student3)));
+        assertThat(students, is(asList(student1, student2)));
+    }
+
+    @Test
+    public void should_not_get_any_student_if_there_is_no_students() {
+        List<Student> byIds = rep.findByIds(asList("1", "2"));
+
+        assertThat(byIds.size(), is(0));
     }
 
     @Test

@@ -1,7 +1,7 @@
 package com.binfang.addstudent;
 
-import com.binfang.student.model.Score;
-import com.binfang.student.model.Student;
+import com.binfang.service.model.Score;
+import com.binfang.service.model.Student;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -28,7 +28,7 @@ public class StudentTranslatorTest {
         Student student = builder.buildStudent("name1, 1, 3, 数学:90.5, 语文:12, 英语:79, 编程:93");
 
         assertThat(student.getId(), is("1"));
-        assertThat(student.getSubject(), is("name1"));
+        assertThat(student.getName(), is("name1"));
         assertThat(student.getScores().size(), is(4));
         assertThat(student.getScores().get(0).getName(), is("数学"));
         assertThat(student.getScores().get(0).getScore(), is(90.5));

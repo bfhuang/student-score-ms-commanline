@@ -1,7 +1,7 @@
 package com.binfang.addstudent;
 
-import com.binfang.student.model.Score;
-import com.binfang.student.model.Student;
+import com.binfang.service.model.Score;
+import com.binfang.service.model.Student;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,7 +15,7 @@ public class StudentTranslator {
     public Student buildStudent(String input) {
         String[] split = input.split(",\\s");
         Student student = new Student();
-        student.setSubject(split[0]);
+        student.setName(split[0]);
         student.setId(split[1]);
         student.setClassNumber(Integer.parseInt(split[2]));
         List<Score> scores = Stream.of(split).filter(item -> item.contains(":")).map(

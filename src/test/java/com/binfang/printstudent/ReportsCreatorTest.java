@@ -1,7 +1,7 @@
 package com.binfang.printstudent;
 
-import com.binfang.student.StudentService;
-import com.binfang.student.model.Student;
+import com.binfang.service.StudentService;
+import com.binfang.service.model.Student;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -56,7 +56,7 @@ public class ReportsCreatorTest {
         assertThat(reports.get(0).getClassNumber(), is(3));
         assertThat(reports.get(0).getStudents().size(), is(1));
         assertThat(reports.get(0).getStudents().get(0).getId(), is("1"));
-        assertThat(reports.get(0).getStudents().get(0).getSubject(), is("name1"));
+        assertThat(reports.get(0).getStudents().get(0).getName(), is("name1"));
         assertThat(reports.get(0).getClassTotalScoreAverage(), is(11.0));
         assertThat(reports.get(0).getClassTotalScoreMedium(), is(10.0));
     }
@@ -84,7 +84,7 @@ public class ReportsCreatorTest {
         assertThat(reports.get(0).getClassNumber(), is(2));
         assertThat(reports.get(0).getStudents().size(), is(1));
         assertThat(reports.get(0).getStudents().get(0).getId(), is("2"));
-        assertThat(reports.get(0).getStudents().get(0).getSubject(), is("name2"));
+        assertThat(reports.get(0).getStudents().get(0).getName(), is("name2"));
         assertThat(reports.get(0).getClassTotalScoreAverage(), is(326.67));
         assertThat(reports.get(0).getClassTotalScoreMedium(), is(320.0));
     }

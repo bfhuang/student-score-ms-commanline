@@ -1,7 +1,7 @@
-package com.binfang.student;
+package com.binfang.service;
 
-import com.binfang.student.model.Student;
-import com.binfang.student.repo.StudentRep;
+import com.binfang.service.model.Student;
+import com.binfang.service.repo.StudentRep;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package com.binfang.student.repo;
+package com.binfang.service.repo;
 
-import com.binfang.student.model.Student;
+import com.binfang.service.model.Student;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +20,7 @@ public class StudentInMemoryRep implements StudentRep {
 
     @Override
     public List<Student> findByIds(List<String> ids) {
-        return ids.stream().map(id -> students.get(id)).collect(Collectors.toList());
+        return students.values().stream().filter(student -> ids.contains(student.getId())).collect(Collectors.toList());
     }
 
     @Override

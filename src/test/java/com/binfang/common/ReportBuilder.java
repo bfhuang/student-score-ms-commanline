@@ -1,7 +1,7 @@
 package com.binfang.common;
 
 import com.binfang.printstudent.Report;
-import com.binfang.student.model.Student;
+import com.binfang.service.model.Student;
 
 import java.util.List;
 

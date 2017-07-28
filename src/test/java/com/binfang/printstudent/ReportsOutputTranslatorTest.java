@@ -1,6 +1,6 @@
 package com.binfang.printstudent;
 
-import com.binfang.student.model.Student;
+import com.binfang.service.model.Student;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,7 +15,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by bfhuang on 7/27/17.
  */
-public class ReportsTranslatorTest {
+public class ReportsOutputTranslatorTest {
 
     private ReportsOutputTranslator translator;
 
@@ -36,7 +36,7 @@ public class ReportsTranslatorTest {
                 "name1|80.0|80.0|80.0|80.0|80.0|320.0\n" +
                 "========================\n" +
                 "全班总分平均数：320.0\n" +
-                "全班总分中位数：300.0"));
+                "全班总分中位数：300.0\n"));
 
     }
 
@@ -60,7 +60,7 @@ public class ReportsTranslatorTest {
                 "name2|70.0|70.0|70.0|70.0|70.0|280.0\n" +
                 "========================\n" +
                 "全班总分平均数：320.0\n" +
-                "全班总分中位数：300.0"));
+                "全班总分中位数：300.0\n"));
 
     }
 }

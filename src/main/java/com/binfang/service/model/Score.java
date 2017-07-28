@@ -1,4 +1,4 @@
-package com.binfang.student.model;
+package com.binfang.service.model;
 
 /**
  * Created by bfhuang on 7/27/17.

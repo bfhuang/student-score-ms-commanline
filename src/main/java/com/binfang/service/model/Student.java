@@ -1,4 +1,4 @@
-package com.binfang.student.model;
+package com.binfang.service.model;
 
 import com.binfang.printstudent.DoubleFormater;
 
@@ -9,13 +9,13 @@ import java.util.List;
  * Created by bfhuang on 7/27/17.
  */
 public class Student {
-    private String subject;
+    private String name;
     private String id;
     private List<Score> scores = new ArrayList<>();
     private int classNumber;
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setId(String id) {
@@ -30,8 +30,8 @@ public class Student {
         return id;
     }
 
-    public String getSubject() {
-        return subject;
+    public String getName() {
+        return name;
     }
 
     public List<Score> getScores() {
