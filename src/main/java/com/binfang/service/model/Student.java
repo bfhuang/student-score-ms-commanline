@@ -1,7 +1,5 @@
 package com.binfang.service.model;
 
-import com.binfang.commands.reports.DoubleFormater;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,6 +58,6 @@ public class Student {
     }
 
     public double getAverage() {
-        return DoubleFormater.formatDouble(scores.stream().mapToDouble(item -> item.getScore()).average().getAsDouble());
+        return scores.stream().mapToDouble(item -> item.getScore()).average().getAsDouble();
     }
 }

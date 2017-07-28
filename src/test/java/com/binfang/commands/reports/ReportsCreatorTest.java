@@ -85,7 +85,7 @@ public class ReportsCreatorTest {
         assertThat(reports.get(0).getStudents().size(), is(1));
         assertThat(reports.get(0).getStudents().get(0).getId(), is("2"));
         assertThat(reports.get(0).getStudents().get(0).getName(), is("name2"));
-        assertThat(reports.get(0).getClassTotalScoreAverage(), is(326.67));
+        assertThat(reports.get(0).getClassTotalScoreAverage(), is(326.6666666666667));
         assertThat(reports.get(0).getClassTotalScoreMedium(), is(320.0));
     }
 }

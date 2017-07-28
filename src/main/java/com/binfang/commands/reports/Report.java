@@ -5,8 +5,6 @@ import com.binfang.service.model.Student;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.binfang.commands.reports.DoubleFormater.formatDouble;
-
 /**
  * Created by bfhuang on 7/27/17.
  */
@@ -41,10 +39,10 @@ public class Report {
     }
 
     public double getClassTotalScoreAverage() {
-        return formatDouble(classTotalScoreAverage);
+        return classTotalScoreAverage;
     }
 
     public double getClassTotalScoreMedium() {
-        return formatDouble(classTotalScoreMedium);
+        return classTotalScoreMedium;
     }
 }

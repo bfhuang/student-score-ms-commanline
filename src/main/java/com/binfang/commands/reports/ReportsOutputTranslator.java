@@ -6,6 +6,8 @@ import com.binfang.commands.contants.Subjects;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.binfang.commands.reports.DoubleFormater.formatDouble;
+
 /**
  * Created by bfhuang on 7/27/17.
  */
@@ -19,12 +21,12 @@ public class ReportsOutputTranslator {
                             String.format("%s|%s|%s|%s|%s|%s|%s",
                                     student.getName(), student.getScoreFor(Subjects.MATH),
                                     student.getScoreFor(Subjects.LANGUAGE), student.getScoreFor(Subjects.ENGLISH),
-                                    student.getScoreFor(Subjects.PROGRAMMING), student.getAverage(),
+                                    student.getScoreFor(Subjects.PROGRAMMING), formatDouble(student.getAverage()),
                                     student.getTotalScore())).collect(Collectors.joining("\n"));
                     buffer.append(String.format(PromptConstants.REPORT,
                             students,
-                            report.getClassTotalScoreAverage(),
-                            report.getClassTotalScoreMedium()));
+                            formatDouble(report.getClassTotalScoreAverage()),
+                            formatDouble(report.getClassTotalScoreMedium())));
                 }
         );
 
