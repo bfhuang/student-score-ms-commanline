@@ -1,6 +1,6 @@
 package com.binfang.service.model;
 
-import com.binfang.printstudent.DoubleFormater;
+import com.binfang.commands.reports.DoubleFormater;
 
 import java.util.ArrayList;
 import java.util.List;

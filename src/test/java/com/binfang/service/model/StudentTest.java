@@ -1,7 +1,7 @@
 package com.binfang.service.model;
 
-import com.binfang.common.StudentBuilder;
-import com.binfang.common.Subjects;
+import com.binfang.helper.StudentBuilder;
+import com.binfang.commands.contants.Subjects;
 import org.junit.Assert;
 import org.junit.Test;
 

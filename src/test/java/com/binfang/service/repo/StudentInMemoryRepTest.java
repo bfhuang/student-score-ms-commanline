@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static com.binfang.common.StudentBuilder.buildStudent;
+import static com.binfang.helper.StudentBuilder.buildStudent;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;

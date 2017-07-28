@@ -1,16 +1,16 @@
 package com.binfang.controller;
 
-import com.binfang.addstudent.AddStudentInputValidator;
-import com.binfang.addstudent.AddStudentModule;
-import com.binfang.addstudent.StudentTranslator;
-import com.binfang.common.ModuleInterface;
-import com.binfang.exit.ExitModule;
+import com.binfang.commands.CommandInterface;
+import com.binfang.commands.addstudent.AddStudentCommand;
+import com.binfang.commands.addstudent.AddStudentInputValidator;
+import com.binfang.commands.addstudent.StudentTranslator;
+import com.binfang.commands.exit.ExitCommand;
+import com.binfang.commands.menu.MainMenu;
+import com.binfang.commands.reports.ReportStudentCommand;
+import com.binfang.commands.reports.ReportsCreator;
+import com.binfang.commands.reports.ReportsOutputTranslator;
 import com.binfang.io.ConsoleIO;
 import com.binfang.io.IOInterface;
-import com.binfang.menu.MainMenu;
-import com.binfang.printstudent.ReportStudentModule;
-import com.binfang.printstudent.ReportsCreator;
-import com.binfang.printstudent.ReportsOutputTranslator;
 import com.binfang.service.StudentService;
 import com.binfang.service.repo.StudentInMemoryRep;
 
@@ -21,32 +21,28 @@ import java.util.Map;
  * Created by bfhuang on 7/28/17.
  */
 public class Controller {
+    private Map<String, CommandInterface> commands = new HashMap<>();
     private MainMenu menu;
-    private Map<String, ModuleInterface> modules = new HashMap<>();
 
     public Controller() {
         IOInterface io = new ConsoleIO();
         StudentService studentService = new StudentService(new StudentInMemoryRep());
-
         menu = new MainMenu(io);
-
-        modules.put("1", new AddStudentModule(io, studentService,
+        commands.put("1", new AddStudentCommand(io, studentService,
                 new AddStudentInputValidator(), new StudentTranslator()));
-
-        modules.put("2", new ReportStudentModule(io, new ReportsCreator(studentService),
+        commands.put("2", new ReportStudentCommand(io, new ReportsCreator(studentService),
                 new ReportsOutputTranslator()));
-
-        modules.put("3", new ExitModule());
+        commands.put("3", new ExitCommand());
     }
 
 
     public void start() {
-
-        String choice;
+        String choice ;
 
         while (true) {
             choice = menu.execute();
-            modules.get(choice).execute();
+            commands.get(choice).execute();
         }
+
     }
 }
