@@ -19,10 +19,15 @@ public class ReportsOutputTranslator {
 
                     String students = report.getStudents().stream().map(student ->
                             String.format("%s|%s|%s|%s|%s|%s|%s",
-                                    student.getName(), student.getScoreFor(Subjects.MATH),
-                                    student.getScoreFor(Subjects.LANGUAGE), student.getScoreFor(Subjects.ENGLISH),
-                                    student.getScoreFor(Subjects.PROGRAMMING), formatDouble(student.getAverage()),
-                                    student.getTotalScore())).collect(Collectors.joining("\n"));
+                                    student.getName(),
+                                    formatDouble(student.getScoreFor(Subjects.MATH)),
+                                    formatDouble(student.getScoreFor(Subjects.LANGUAGE)),
+                                    formatDouble(student.getScoreFor(Subjects.ENGLISH)),
+                                    formatDouble(student.getScoreFor(Subjects.PROGRAMMING)),
+                                    formatDouble(student.getAverage()),
+                                    formatDouble(student.getTotalScore())))
+                            .collect(Collectors.joining("\n"));
+
                     buffer.append(String.format(PromptConstants.REPORT,
                             students,
                             formatDouble(report.getClassTotalScoreAverage()),
